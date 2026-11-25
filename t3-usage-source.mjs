@@ -119,6 +119,7 @@ const state = {
   inflight: null,
   lastError: null,
   lastSuccessAt: null,
+  reads: 0,
 };
 
 async function readLimits() {
@@ -209,6 +210,7 @@ const server = createServer(async (request, response) => {
   }
 
   if (path === "/limits") {
+    state.reads += 1;
     try {
       send(response, 200, await quota());
     } catch {
@@ -224,6 +226,7 @@ const server = createServer(async (request, response) => {
       key: state.key === undefined ? "missing" : "present",
       lastSuccessAt: state.lastSuccessAt,
       lastError: state.lastError,
+      reads: state.reads,
     });
     return;
   }

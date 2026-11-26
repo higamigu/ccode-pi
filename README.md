@@ -23,7 +23,6 @@ The key is read from the first source that has one:
 
 1. `$CCODE_API_KEY`
 2. `~/.config/ccode/api-key`
-3. `~/.config/opencode/ccode-api-key`
 
 The file fallbacks matter because processes started outside a login shell do not
 read `.zshrc`. If no key is found, the provider is still registered, and you can

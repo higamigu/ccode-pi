@@ -26,7 +26,6 @@ const API = "https://api.ccode.si/v1";
 /** Same order as index.ts: env first, then the files desktop launches can see. */
 const KEY_FILES = [
   join(homedir(), ".config/ccode/api-key"),
-  join(homedir(), ".config/opencode/ccode-api-key"),
 ];
 
 /** T3 polls every providerHealthRefreshInterval (5 min); this only absorbs manual refreshes. */
